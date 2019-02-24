@@ -45,7 +45,7 @@ let handleSendTransaction = function() {
 
 // Initialize elements and events (no need to change)
 const defaultAmount = pr;
-const defaultAddress = "0x22b05d73097c0a2440d29af61db4b4ed3803e55e";
+const defaultAddress = "1";
 const inputAmount = document.getElementById("input-amount");
 inputAmount.setAttribute("placeholder", defaultAmount);
 inputAmount.setAttribute("value", defaultAmount);
