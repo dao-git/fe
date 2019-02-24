@@ -16,9 +16,6 @@ console.log(contract_address);
 document.getElementById("_repoId").innerText = deserialized_repo
 document.getElementById("_pullRequestId").innerText = pr
 
-
-
-//var contract_address = "0x3538716fd0f6bf656cbf12506ba4cc73979d3503";
 var contract = new web3.eth.Contract(
   [
     {
@@ -48,8 +45,6 @@ let handleSendTransaction = function() {
     from: "0x0000000000000000000000000000000000000000"
   });
 }
-
-
 
 // Initialize elements and events (no need to change)
 const defaultAmount = pr;
