@@ -1,6 +1,6 @@
 // TODO: Step 2: Setup Developer API Key
 let fm = new Fortmatic("pk_test_2886ED2326F7B9CE");
-web3 = new Web3(fm.getProvider());
+let web3 = new Web3(fm.getProvider());
 // End Step 2
 
 var url_string = window.location.href
@@ -8,7 +8,7 @@ var url = new URL(url_string);
 var pr = url.searchParams.get("pr");
 var repo = url.searchParams.get("repo");
 var contract_address = url.searchParams.get("contract");
-var deserialized_repo = web3.utils.hexToUtf8(repo)
+var deserialized_repo = web3.utils.hexToUtf8(repo);
 console.log(pr);
 console.log(repo);
 console.log(deserialized_repo);
