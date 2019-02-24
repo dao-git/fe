@@ -1,8 +1,5 @@
-// TODO: Step 2: Setup Developer API Key
 let fm = new Fortmatic("pk_test_2886ED2326F7B9CE");
 let web3 = new Web3(fm.getProvider());
-// End Step 2
-
 var url_string = window.location.href
 var url = new URL(url_string);
 var pr = url.searchParams.get("pr");
