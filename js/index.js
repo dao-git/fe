@@ -12,7 +12,7 @@ var deserialized_repo = web3.utils.hexToUtf8(repo)
 console.log(pr);
 console.log(repo);
 console.log(deserialized_repo);
-console.log(contract);
+console.log(contract_address);
 document.getElementById("_repoId").innerText = deserialized_repo
 document.getElementById("_pullRequestId").innerText = pr
 
