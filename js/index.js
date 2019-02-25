@@ -56,7 +56,3 @@ document.getElementById("btn-send").onclick = function() {
   handleSendApproval(repo, pr);
 };
 
-document.getElementById("btn-init").onclick = function() {
-  //const voteThreshold = document.getElementById("input-vote");
-  handleSendInit(repo, voteThreshold);
-};
