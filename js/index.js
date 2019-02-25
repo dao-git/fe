@@ -53,7 +53,3 @@ let handleSendInit = function() {
   });
 }
 
-document.getElementById("btn-send").onclick = function() {
-  handleSendApproval(repo, pr);
-};
-
