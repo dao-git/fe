@@ -52,13 +52,13 @@ let handleSendInit = function() {
 // Initialize elements and events (no need to change)
 
 const defaultVote = "1";
-inputAmount.setAttribute("input-vote", defaultVote);
+const voteThreshold = document.getElementById("input-vote");
+voteThreshold.setAttribute("input-vote", defaultVote);
 
 document.getElementById("btn-send").onclick = function() {
   handleSendApproval(repo, pr);
 };
 
 document.getElementById("btn-init").onclick = function() {
-  const voteThreshold = document.getElementById("input-vote");
   handleSendInit(repo, voteThreshold);
 };
