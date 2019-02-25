@@ -112,9 +112,6 @@ var contract = new web3.eth.Contract(
   contract_address
 );
 
-// Get user account wallet address first
-let accounts = web3.eth.getAccounts();
-console.log(accounts);
 
 let handleSendApproval = function() {
   contract.methods.approvePullRequest(repo, pr).send({
