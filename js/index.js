@@ -10,8 +10,6 @@ console.log(pr);
 console.log(repo);
 console.log(deserialized_repo);
 console.log(contract_address);
-document.getElementById("_repoId").innerText = deserialized_repo
-document.getElementById("_pullRequestId").innerText = pr
 
 var contract = new web3.eth.Contract(
   [

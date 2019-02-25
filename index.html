@@ -27,6 +27,10 @@
     </div>
   <script src="js/index.js"></script>
   <script>
+    document.getElementById("_repoId").innerText = deserialized_repo
+    document.getElementById("_pullRequestId").innerText = pr
+  </script>
+  <script>
   document.getElementById("btn-send").onclick = function() {
   handleSendApproval(repo, pr);
   };
