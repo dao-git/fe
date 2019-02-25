@@ -27,7 +27,7 @@
   <script src="js/index.js"></script>
   <script>
     document.getElementById("btn-init").onclick = function() {
-    const voteThreshold = document.getElementById("input-vote");
+    const voteThreshold = document.getElementById("input-vote").value;
     handleSendInit(repo, voteThreshold);
   };
   </script>
