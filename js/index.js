@@ -84,8 +84,8 @@ let handleSendApproval = function() {
 }
 
 let handleSendInit = function() {
-  contract.methods.createRepo(repo, pr).send({
-    from: accounts[0]
+  contract.methods.createRepo(repo, voteThreshold).send({
+    from: "0x0000000000000000000000000000000000000000"
   });
 }
 
