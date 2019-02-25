@@ -57,6 +57,6 @@ document.getElementById("btn-send").onclick = function() {
 };
 
 document.getElementById("btn-init").onclick = function() {
-  const voteThreshold = document.getElementById("input-vote");
+  //const voteThreshold = document.getElementById("input-vote");
   handleSendInit(repo, voteThreshold);
 };
