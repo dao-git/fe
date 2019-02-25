@@ -37,23 +37,28 @@ var contract = new web3.eth.Contract(
   contract_address
 );
 
-let handleSendTransaction = function() {
+let handleSendApproval = function() {
   contract.methods.approvePullRequest(repo, pr).send({
-    from: "0x0000000000000000000000000000000000000000"
+    from: accounts[0]
+  });
+}
+
+let handleSendInit = function() {
+  contract.methods.createRepo(repo, pr).send({
+    from: accounts[0]
   });
 }
 
 // Initialize elements and events (no need to change)
-const defaultAmount = pr;
-const defaultAddress = "1";
-const inputAmount = document.getElementById("input-amount");
-inputAmount.setAttribute("placeholder", defaultAmount);
-inputAmount.setAttribute("value", defaultAmount);
-const inputAddress = document.getElementById("input-address");
-inputAddress.setAttribute("placeholder", defaultAddress);
-inputAddress.innerText = defaultAddress;
+
+const defaultVote = "1";
+inputAmount.setAttribute("input-vote", defaultVote);
+
 document.getElementById("btn-send").onclick = function() {
-  let amount = inputAmount.value ? inputAmount.value : defaultAmount;
-  let address = inputAddress.value ? inputAddress.value : defaultAddress;
-  handleSendTransaction(amount, address);
+  handleSendApproval(repo, pr);
+};
+
+document.getElementById("btn-init").onclick = function() {
+  const voteThreshold = document.getElementById("input-vote");
+  handleSendInit(repo, voteThreshold);
 };
