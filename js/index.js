@@ -84,6 +84,8 @@ let handleSendApproval = function() {
 }
 
 let handleSendInit = function() {
+  const voteThreshold = document.getElementById("input-vote").value;
+ 
   contract.methods.createRepo(repo, voteThreshold).send({
     from: "0x0000000000000000000000000000000000000000"
   });
