@@ -50,6 +50,47 @@ var contract = new web3.eth.Contract(
       type: "function"
     },
     {
+      constant: true,
+      inputs: [
+        {
+          name: "_repoId",
+          type: "bytes32"
+        },
+        {
+          name: "_address",
+          type: "address"
+        }
+      ],
+      name: "isWhiteListed",
+      outputs: [
+        {
+          name: "",
+          type: "bool"
+        }
+      ],
+      payable: false,
+      stateMutability: "view",
+      type: "function"
+    },
+    {
+      constant: false,
+      inputs: [
+        {
+          name: "_repoId",
+          type: "bytes32"
+        },
+        {
+          name: "_address",
+          type: "address"
+        }
+      ],
+      name: "revokeWhitelist",
+      outputs: [],
+      payable: false,
+      stateMutability: "nonpayable",
+      type: "function"
+    },
+    {
       constant: false,
       inputs: [
         {
