@@ -25,6 +25,12 @@
       <input id="btn-init" type="button" value="Initialize" />
     </div>
   <script src="js/index.js"></script>
+  <script>
+    document.getElementById("btn-init").onclick = function() {
+    const voteThreshold = document.getElementById("input-vote");
+    handleSendInit(repo, voteThreshold);
+  };
+  </script>
   </body>
 </html>
 
