@@ -112,7 +112,7 @@ input[type=number]::-webkit-outer-spin-button {
   border: 2px #8095FF solid;
   background-color: #8095FF;
 }
-textarea[name="input-vote"],
+textarea[name="vote"],
 textarea[name="address"] {
   resize: none;
   font-size: 16px;
