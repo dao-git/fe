@@ -32,6 +32,42 @@ var contract = new web3.eth.Contract(
       payable: false,
       stateMutability: "nonpayable",
       type: "function"
+    },
+    {
+      constant: false,
+      inputs: [
+        {
+          name: "_repoId",
+          type: "bytes32"
+        },
+        {
+          name: "_passingThreshold",
+          type: "uint256"
+        }
+      ],
+      name: "createRepo",
+      outputs: [],
+      payable: false,
+      stateMutability: "nonpayable",
+      type: "function"
+    },
+    {
+      constant: false,
+      inputs: [
+        {
+          name: "_repoId",
+          type: "bytes32"
+        },
+        {
+          name: "_address",
+          type: "address"
+        }
+      ],
+      name: "whitelist",
+      outputs: [],
+      payable: false,
+      stateMutability: "nonpayable",
+      type: "function"
     }
   ],
   contract_address
