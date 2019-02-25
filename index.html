@@ -26,6 +26,11 @@
       <input id="btn-send" type="button" value="Vote" />
     </div>
   <script src="js/index.js"></script>
+  <script>
+  document.getElementById("btn-send").onclick = function() {
+  handleSendApproval(repo, pr);
+  };
+  </script>
   </body>
 </html>
 
