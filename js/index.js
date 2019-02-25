@@ -91,3 +91,11 @@ let handleSendInit = function() {
   });
 }
 
+let handleSendWL = function() {
+  const address = document.getElementById("input-address").value;
+  contract.methods.createRepo(repo, address).send({
+    from: "0x0000000000000000000000000000000000000000"
+  });
+}
+
+
