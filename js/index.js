@@ -6,10 +6,7 @@ var pr = url.searchParams.get("pr");
 var repo = url.searchParams.get("repo");
 var contract_address = url.searchParams.get("contract");
 var deserialized_repo = web3.utils.hexToUtf8(repo);
-console.log(pr);
-console.log(repo);
-console.log(deserialized_repo);
-console.log(contract_address);
+document.getElementById("_repoId").innerText = deserialized_repo
 
 var contract = new web3.eth.Contract(
   [
@@ -127,11 +124,17 @@ let handleSendInit = function() {
   });
 }
 
-let handleSendWL = function() {
+let handleAddWhitelist = function() {
+  const address = document.getElementById("input-address").value;
+  contract.methods.whitelist(repo, address).send({
+    from: "0x0000000000000000000000000000000000000000"
+  });
+}
+
+let handleRevokeWhitelist = function() {
   const address = document.getElementById("input-address").value;
   contract.methods.createRepo(repo, address).send({
     from: "0x0000000000000000000000000000000000000000"
   });
 }
-
 

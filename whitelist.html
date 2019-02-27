@@ -15,18 +15,21 @@
     <div class="container">
       <img src="bufficorn.png" width=30>
       <img alt="logo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNSAwSDIyLjVIMzBWNy41MTA3NEgyMi41SDE1SDcuNVYxNS4wMjJWMTUuNTAzNFYyMi40ODkzVjIyLjUzMjdWMzBIMFYyMi41MzI3VjIyLjQ4OTNWMTUuNTAzNFYxNS4wMjJWNy41MTA3NFYwSDcuNUgxNVpNMjIuNSAyMi40ODg4SDE1LjA0M1YxNS4wMjE1SDI5Ljk5NDFWMjIuNzUxNUMyOS45OTQxIDI0LjY3MjkgMjkuMjMyNCAyNi41MTYxIDI3Ljg3NyAyNy44NzVDMjYuNTE5NSAyOS4yMzQ0IDI0LjY3OTcgMjkuOTk4NSAyMi43NjE3IDI5Ljk5OTVIMjIuNVYyMi40ODg4WiIgZmlsbD0id2hpdGUiIGZpbGwtb3BhY2l0eT0iMC4xIi8+Cjwvc3ZnPgo="/>
-      <h1>Manage Repository's Whitelist</h1>
+      <h1>Manage Your Whitelist</h1>
       <h2>Repo Id</h2>
       <h3 id="_repoId"></h3>
       <div class="divider"></div>
       <h2>Eth Address</h2>
       <textarea id="input-address" name="address" cols="21" rows="1" maxlength="42">0x0</textarea>
-      <input id="btn-wl" type="button" value="Whitelist" />
+      <input id="btn-wl" type="button" value="Whitelist" /><input id="btn-wlrv" type="button" value="Revoke" />
     </div>
   <script src="js/index.js"></script>
   <script>
     document.getElementById("btn-wl").onclick = function() {
-      handleSendWL();
+      handleAddWhitelist();
+  };
+  document.getElementById("btn-wlrv").onclick = function() {
+    handleRevokeWhitelist();
   };
   </script>
   </body>
