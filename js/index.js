@@ -9,11 +9,9 @@ var deserialized_repo = web3.utils.hexToUtf8(repo);
 document.getElementById("_repoId").innerText = deserialized_repo
 
 var contract = new web3.eth.Contract(
-  [
-    {
+  [{
       constant: false,
-      inputs: [
-        {
+      inputs: [{
           name: "_repoId",
           type: "bytes32"
         },
@@ -30,8 +28,7 @@ var contract = new web3.eth.Contract(
     },
     {
       constant: false,
-      inputs: [
-        {
+      inputs: [{
           name: "_repoId",
           type: "bytes32"
         },
@@ -48,8 +45,7 @@ var contract = new web3.eth.Contract(
     },
     {
       constant: true,
-      inputs: [
-        {
+      inputs: [{
           name: "_repoId",
           type: "bytes32"
         },
@@ -59,20 +55,17 @@ var contract = new web3.eth.Contract(
         }
       ],
       name: "isWhiteListed",
-      outputs: [
-        {
-          name: "",
-          type: "bool"
-        }
-      ],
+      outputs: [{
+        name: "",
+        type: "bool"
+      }],
       payable: false,
       stateMutability: "view",
       type: "function"
     },
     {
       constant: false,
-      inputs: [
-        {
+      inputs: [{
           name: "_repoId",
           type: "bytes32"
         },
@@ -89,8 +82,7 @@ var contract = new web3.eth.Contract(
     },
     {
       constant: false,
-      inputs: [
-        {
+      inputs: [{
           name: "_repoId",
           type: "bytes32"
         },
@@ -110,31 +102,30 @@ var contract = new web3.eth.Contract(
 );
 
 
-let handleSendApproval = function() {
+let handleSendApproval = function () {
   contract.methods.approvePullRequest(repo, pr).send({
     from: "0x0000000000000000000000000000000000000000"
   });
 }
 
-let handleSendInit = function() {
+let handleSendInit = function () {
   const voteThreshold = document.getElementById("input-vote").value;
- 
+
   contract.methods.createRepo(repo, voteThreshold).send({
     from: "0x0000000000000000000000000000000000000000"
   });
 }
 
-let handleAddWhitelist = function() {
+let handleAddWhitelist = function () {
   const address = document.getElementById("input-address").value;
   contract.methods.whitelist(repo, address).send({
     from: "0x0000000000000000000000000000000000000000"
   });
 }
 
-let handleRevokeWhitelist = function() {
+let handleRevokeWhitelist = function () {
   const address = document.getElementById("input-address").value;
-  contract.methods.createRepo(repo, address).send({
+  contract.methods.revokeWhitelist(repo, address).send({
     from: "0x0000000000000000000000000000000000000000"
   });
 }
-
