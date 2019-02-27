@@ -1,11 +1,11 @@
-let fm = new Fortmatic("pk_test_2886ED2326F7B9CE");
-let web3 = new Web3(fm.getProvider());
-var url_string = window.location.href
-var url = new URL(url_string);
-var pr = url.searchParams.get("pr");
-var repo = url.searchParams.get("repo");
-var contract_address = url.searchParams.get("contract");
-var deserialized_repo = web3.utils.hexToUtf8(repo);
+const fm = new Fortmatic("pk_test_2886ED2326F7B9CE");
+const web3 = new Web3(fm.getProvider());
+const url_string = window.location.href
+const url = new URL(url_string);
+const pr = url.searchParams.get("pr");
+const repo = url.searchParams.get("repo");
+const contract_address = url.searchParams.get("contract");
+const deserialized_repo = web3.utils.hexToUtf8(repo);
 document.getElementById("_repoId").innerText = deserialized_repo
 
 var contract = new web3.eth.Contract(
@@ -110,7 +110,6 @@ let handleSendApproval = function () {
 
 let handleSendInit = function () {
   const voteThreshold = document.getElementById("input-vote").value;
-
   contract.methods.createRepo(repo, voteThreshold).send({
     from: "0x0000000000000000000000000000000000000000"
   });
